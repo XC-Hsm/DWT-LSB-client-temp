@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>音频数字水印的提取和嵌入</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>音频数字水印的提取和嵌入</h1>
+  <div class="form-container">
+    <form>
+      <div>
+        <label for="audio">原始音频：</label>
+        <input type="file" id="audio" name="audio">
+      </div>
+      <div>
+        <label for="algorithm">选择算法：</label>
+        <select id="algorithm" name="algorithm">
+          <option value="0">LSB</option>
+          <option value="1">DWT</option>
+        </select>
+      </div>
+      <div>
+        <label for="mediaType">选择媒体类型：</label>
+        <select id="mediaType" name="mediaType">
+          <option value="0">文本</option>
+          <option value="1">图片</option>
+        </select>
+      </div>
+      <div id="textInput">
+        <label for="textToHide">水印文本：</label>
+        <input type="text" id="textToHide" name="textToHide">
+      </div>
+      <div id="imageInput" style="display: none;">
+        <label for="imageToHide">水印图片：</label>
+        <input type="file" id="imageToHide" name="imageToHide">
+      </div>
+      <button id="upload-btn" type="button">嵌入水印</button>
+    </form>
+
+    <form>
+      <!-- 添加第二个表单的内容 -->
+      <div>
+        <label for="audio2">含水印的音频：</label>
+        <input type="file" id="audio2" name="audio2">
+      </div>
+      <div>
+        <label for="audio3">原始音频（可空）：</label>
+        <input type="file" id="audio3" name="audio3">
+      </div>
+      <div>
+        <label for="key">Key：</label>
+        <input type="text" id="key" name="key">
+      </div>
+      <button id="submit-btn" type="button">提取水印</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
